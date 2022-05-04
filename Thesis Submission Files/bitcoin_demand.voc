@@ -1,0 +1,76 @@
+:OPTIMIZER=Powell
+:SENSITIVITY=Off
+:MULTIPLE_START=RRandom
+:RANDOM_NUMBER=Mersenne
+:OUTPUT_LEVEL=On
+:TRACE=Off
+:MAX_ITERATIONS=70000
+:SIMS_MAX=500
+:RESTART_MAX=7000
+:PASS_LIMIT=2
+:FRACTIONAL_TOLERANCE=0.0003
+:TOLERANCE_MULTIPLIER=21
+:ABSOLUTE_TOLERANCE=1
+:SCALE_ABSOLUTE=1
+:VECTOR_POINTS=25
+:MCLIMIT=0
+:MCJUMP=0.05
+:MCBURNIN=0
+:MCDELTA=0.0001
+:MCTEMP=1
+:MCNCHAINS=2
+:MCUPDATEPAIRS=2
+:MCSCHEDULE=0
+:MCOUTLIER=0.05
+:MCXOVER=0.2
+:MCCOOLING=1000
+:MCINITMETHOD=0
+:MCPAYOFFTYPE=0
+:MCGAMMA=1
+:MCRECORD=0
+:MCKNN=0
+:MCEPSILON=0.01
+:MCFTEMP=1
+0.1<=Sensitivity of Momentum to Shortterm return=1<=4
+0.001<=Sensitivity of Price to Demand Supply Balance=1<=4
+0.001<=Sensitivity of User Entry to Long Term Trends[Chartist]=1<=2
+0.5<=Sensitivity of User Entry to Long Term Trends[Fundamentalist]=1<=4
+0.01<=Sensitivity of User Entry to Long Term Trends[Transacter]=1<=1
+180<=Forward Looking Time Horizon=365<=1095
+1<=Time to Close the Gap Between Desired and Current=7<=180
+0.001<=BTC Price Adjustment Time=7<=45
+0.0001<=Time for Miners to Supply=7<=30
+1<=User Entry Adjustment Time=7<=365
+0.01<=Pressure Sensitivity to Price Gap=1<=4
+0.001<=Short Term Reference Return=0.05<=1
+5<=Short Term Investment Horizon=30<=90
+0.5<=Sensitivity of User Entry to Short Term Trends[Chartist]=1<=4
+0.001<=Sensitivity of User Entry to Short Term Trends[Fundamentalist]=1<=1
+0.01<=Sensitivity of User Entry to Short Term Trends[Transacter]=1<=1
+0.1<=Sensitivity of User Exit to Long Term Trends[Chartist]=1<=2
+0.25<=Sensitivity of User Exit to Long Term Trends[Fundamentalist]=1<=4
+0.01<=Sensitivity of User Exit to Long Term Trends[Transacter]=1<=1
+0.25<=Sensitivity of User Exit to Short Term Trends[Chartist]=1<=4
+0.001<=Sensitivity of User Exit to Short Term Trends[Fundamentalist]=1<=1
+0.01<=Sensitivity of User Exit to Short Term Trends[Transacter]=1<=1
+0.0001<=Sensitivity to Longterm Pressure[Chartist]=1<=2
+0.5<=Sensitivity to Longterm Pressure[Fundamentalist]=1<=4
+0.0001<=Sensitivity to Longterm Pressure[Transacter]=1<=1
+0.5<=Sensitivity to Momentum Pressure[Chartist]=1<=8
+0.1<=Sensitivity to Momentum Pressure[Fundamentalist]=1<=4
+0.01<=Sensitivity to Momentum Pressure[Transacter]=1<=1
+1<=Maximum Holding per User[Chartist]=1<=1000
+1<=Maximum Holding per User[Fundamentalist]=1<=1000
+1<=Maximum Holding per User[Transacter]=1<=2000
+7<=User Residence Time[Chartist]=7<=90
+180<=User Residence Time[Fundamentalist]=365<=3650
+90<=User Residence Time[Transacter]=365<=3650
+0<=Proportion of Dedicated Users[Chartist]=0<=0.2
+0<=Proportion of Dedicated Users[Fundamentalist]=0<=0.2
+0<=Proportion of Dedicated Users[Transacter]=0<=0.2
+0<=Reference ROI per Annum for User[Chartist]=0.2<=5
+0<=Reference ROI per Annum for User[Fundamentalist]=0.2<=5
+0<=Reference ROI per Annum for User[Transacter]=0.05<=5
+7<=Short Trend Average Time=15<=45
+90<=Long Trend Average Time=365<=730
+1e-08<=Minimum Holding of BTC Allowed=0.01<=1

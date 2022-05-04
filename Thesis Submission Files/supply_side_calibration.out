@@ -1,0 +1,49 @@
+:COMSYS After 139723 simulations
+:COMSYS Best payoff is -591.032
+:COMSYS Normally terminated optimization
+:OPTIMIZER=Powell
+:SENSITIVITY=Off
+:MULTIPLE_START=RRandom
+:RANDOM_NUMBER=Default
+:OUTPUT_LEVEL=On
+:TRACE=Off
+:MAX_ITERATIONS=70000
+:SIMS_MAX=200
+:RESTART_MAX=700
+:PASS_LIMIT=2
+:FRACTIONAL_TOLERANCE=0.0003
+:TOLERANCE_MULTIPLIER=21
+:ABSOLUTE_TOLERANCE=1
+:SCALE_ABSOLUTE=1
+:VECTOR_POINTS=25
+:MCLIMIT=0
+:MCJUMP=0.05
+:MCBURNIN=0
+:MCDELTA=0.0001
+:MCTEMP=1
+:MCNCHAINS=2
+:MCUPDATEPAIRS=2
+:MCSCHEDULE=0
+:MCOUTLIER=0.05
+:MCXOVER=0.2
+:MCCOOLING=1000
+:MCINITMETHOD=0
+:MCPAYOFFTYPE=0
+:MCGAMMA=1
+:MCRECORD=0
+:MCKNN=0
+:MCEPSILON=0.01
+:MCFTEMP=1
+100000 <= Maximum Mining Unit Cost = 245569  <= 1e+06
+0.0015 <= Cost Of Energy = 0.00171387  <= 0.0048
+0.05 <= Minimum Utilization = 0.05  <= 0.5
+2 <= Sensitivity of Capacity Utilization to Costs = 16.2644  <= 32
+0.0125 <= Sensitivity of Miner Exit to ROI = 0.250439  <= 2
+0.0125 <= Sensitivity of Miners to ROI = 0.225785  <= 2
+700 <= Residence Time = 2544.75  <= 3650
+0 <= Discount Rate For Mining Per Annum = 0.125  <= 0.125
+0.03 <= Reference ROI Per Annum = 0.130689  <= 0.15
+7 <= Time To Adjust Number of Miners = 10.2485  <= 30
+15 <= Time To Adjust ROI Perception = 44.2409  <= 90
+1 <= Time to Adjust Capacity Utilization = 17.1221  <= 45
+700 <= Average Life of Mining Hardware = 1565.5  <= 1825
