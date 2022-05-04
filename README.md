@@ -1,5 +1,4 @@
-#MIT SDM Thesis on System Dynamics Modeling of Bitcoin
- All model files required to replicate the results from Vignesh's SDM program thesis at MIT. The project was advised by Prof Hazhir Rahmandad.
+All model files required to replicate the results from Vignesh's SDM program thesis at MIT. The project was advised by Prof Hazhir Rahmandad.
 
 Vignesh can be reached at vigneshg@mit.edu.
 
