@@ -23,3 +23,6 @@ The individual .csv files containing data pulled from the blockchain.com API wit
 
 6. demand_side_calibration.rep and supply_side_calibration.rep
 The report files from Vensim's calibration run for each sector of the model are also uploaded. Refer to it for details like the RSquared, MAPE and MSE of the data fit.
+
+7. combined.csv
+CSV format of the simulated result from the model applying the 2 .out files.
