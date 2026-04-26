@@ -1,28 +1,74 @@
-All model files required to replicate the results from Vignesh's SDM program thesis at MIT. The project was advised by Prof Hazhir Rahmandad.
+<!-- ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ -->
 
-Vignesh can be reached at vigneshg@mit.edu.
+# N° 03 · a thesis on bitcoin, in system dynamics
 
-Refer to 'Thesis Submission Folder' for the initial committed version of the model and its support files. This was the state of the work at the point of the submission of the thesis report, on the week of May 6, 2022.
+> *stocks and flows, all the way down.*
 
-Inside this, there are the following files:
+all model files required to replicate the SDM-program thesis at MIT, advised by **prof. hazhir rahmandad**. the question: what happens when you stop arguing about bitcoin in op-eds and try to model it as a system — with feedback loops, delays, and accumulations that don't care what anyone thinks?
 
-1. thesis_checkpoint.mdl
-This file can be opened with Vensim DSS. At the time of publishing this, the version in use was 9.2.4.
+`vensim DSS` · `python` · 2022 · **status: running**
 
-2. bitcoin_demand.voc and bitcoin2.voc
-These are the calibration control files used to calibrate the production and market sides using Vensim's calibration engine.
+📄 *thesis submission folder* — the state of the work the week of submission, may 6, 2022.
+✉️ vignesh — `vigneshg@mit.edu`
 
-3. demand_side_calibration.out and supply_side_calibration.out
-These are the results of the calibration from the running it using the .voc files referenced earlier. These need to be applied in the model before simulation.
+<!-- ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ -->
 
-4. DataPull.py
-A simple python script file that was used to pull the data from the blockchain.com APIs to serve as exogenous inputs to the model. This can be rerun to update the csv files in the DataFiles/ folder.
+## the model files
 
-5. DataFiles folder contains multiple .csv files and a ConsolidatedData.vdfx file
-The individual .csv files containing data pulled from the blockchain.com API with the py script referenced earlier are consolidated in the ConsolidatedData.csv file. This consolidated file was then imported into Vensim's native vdfx file format. The vdfx file needs to be loaded for the model to run. If there is a need to update the data, rerun the py script, to update the csv files, and import the new csv file into Vensim to convert it into a vdfx file.
+| file | what it is |
+|---|---|
+| `thesis_checkpoint.mdl`            | the model. opens in **vensim DSS 9.2.4**. |
+| `bitcoin_demand.voc`               | calibration control file — market side |
+| `bitcoin2.voc`                     | calibration control file — production side |
+| `demand_side_calibration.out`      | calibration result — apply before simulation |
+| `supply_side_calibration.out`      | calibration result — apply before simulation |
+| `demand_side_calibration.rep`      | calibration report — RSquared, MAPE, MSE |
+| `supply_side_calibration.rep`      | calibration report — RSquared, MAPE, MSE |
+| `combined.csv`                     | simulated output, both `.out` files applied |
+| `DataPull.py`                      | pulls exogenous inputs from blockchain.com APIs |
+| `DataFiles/ConsolidatedData.vdfx`  | consolidated data in vensim's native format. **load this for the model to run.** |
+| `DataFiles/*.csv`                  | raw pulls per series, before consolidation |
 
-6. demand_side_calibration.rep and supply_side_calibration.rep
-The report files from Vensim's calibration run for each sector of the model are also uploaded. Refer to it for details like the RSquared, MAPE and MSE of the data fit.
+## the data pipeline
 
-7. combined.csv
-CSV format of the simulated result from the model applying the 2 .out files.
+```
+blockchain.com API
+        │
+        ▼
+   DataPull.py
+        │
+        ▼
+   DataFiles/*.csv  ──▶  ConsolidatedData.csv  ──▶  ConsolidatedData.vdfx
+                                                            │
+                                                            ▼
+                                              thesis_checkpoint.mdl
+                                                            │
+                                                            ▼
+                                                      simulation
+```
+
+to refresh the data: rerun `DataPull.py`, regenerate the consolidated csv, re-import to vdfx in vensim.
+
+## to run
+
+1. open `thesis_checkpoint.mdl` in **vensim DSS** (9.2.4 or later)
+2. load `DataFiles/ConsolidatedData.vdfx`
+3. apply both `.out` files (demand- and supply-side calibration)
+4. simulate
+
+## the calibration reports
+
+`*.rep` files document the fit:
+- **RSquared** — variance explained
+- **MAPE** — mean absolute percentage error
+- **MSE** — mean squared error
+
+reports are committed alongside the model so the fit isn't a black box.
+
+<!-- ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ -->
+
+## colophon
+
+an MIT SDM thesis on system dynamics modeling of bitcoin. the repo is the appendix — every file you'd need to rerun, recalibrate, or pull fresh data and try it again.
+
+*built downstairs.* — [the basement, room 7](https://github.com/AthenaTheOwl)
