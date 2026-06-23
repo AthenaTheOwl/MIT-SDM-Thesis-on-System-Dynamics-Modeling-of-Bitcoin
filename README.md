@@ -67,6 +67,28 @@ reports are committed alongside the model so the fit isn't a black box.
 
 <!-- ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ -->
 
+## live demo
+
+this repo can ship as a Streamlit Cloud viewer for the committed simulation output:
+
+```bash
+python -m streamlit run streamlit_app.py
+```
+
+deployment settings:
+
+- platform: Streamlit Community Cloud
+- app file: `streamlit_app.py`
+- dependencies: `requirements.txt`
+
+the live app is a read-only appendix viewer. full model replication still requires Vensim DSS and the committed `.mdl`, `.vdfx`, and calibration files.
+
+## connects to
+
+- `trace-to-eval-harness` for run-evidence packet thinking
+- `ai-field-brief` for systems-analysis brief writing
+- `portfolio-thesis-plane` for public portfolio positioning
+
 ## colophon
 
 an MIT SDM thesis on system dynamics modeling of bitcoin. the repo is the appendix — every file you'd need to rerun, recalibrate, or pull fresh data and try it again.
