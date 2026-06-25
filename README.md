@@ -83,6 +83,26 @@ deployment settings:
 
 the live app is a read-only appendix viewer. full model replication still requires Vensim DSS and the committed `.mdl`, `.vdfx`, and calibration files.
 
+## verify
+
+The headless gate checks the committed appendix, not Vensim execution:
+
+```bash
+python scripts/validate_thesis_archive.py
+```
+
+Expected output:
+
+```text
+validated 10 required files and combined.csv
+```
+
+Then run the read-only viewer locally:
+
+```bash
+python -m streamlit run streamlit_app.py
+```
+
 ## connects to
 
 - `trace-to-eval-harness` for run-evidence packet thinking
