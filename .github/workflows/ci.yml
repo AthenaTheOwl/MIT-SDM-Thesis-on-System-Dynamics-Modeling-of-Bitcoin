@@ -1,0 +1,43 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install pytest
+
+      - name: compile python surfaces
+        run: |
+          python - <<'PY'
+          import compileall
+          import py_compile
+          from pathlib import Path
+          for file_name in ["streamlit_app.py", "app.py"]:
+              path = Path(file_name)
+              if path.exists():
+                  py_compile.compile(str(path), doraise=True)
+          for dir_name in ["src", "scripts", "tests"]:
+              path = Path(dir_name)
+              if path.exists():
+                  if not compileall.compile_dir(str(path), quiet=1):
+                      raise SystemExit(f"compile failed: {dir_name}")
+          PY
+
+      - name: validate-thesis-archive
+        run: python scripts/validate_thesis_archive.py
