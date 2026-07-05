@@ -11,14 +11,22 @@ The work is about explanatory structure. It asks how feedback, adoption, supply,
 ## Contents
 
 ```text
-combined.csv
-model.mdl
-model.voc
-model.out
-model_2.voc
-model_2.out
-streamlit_app.py
-requirements.txt
+.
+|-- streamlit_app.py
+|-- requirements.txt
+|-- scripts/
+|   `-- validate_thesis_archive.py
+`-- Thesis Submission Files/
+    |-- thesis_checkpoint.mdl
+    |-- bitcoin2.voc
+    |-- bitcoin_demand.voc
+    |-- demand_side_calibration.out
+    |-- supply_side_calibration.out
+    |-- demand_side_calibration.rep
+    |-- supply_side_calibration.rep
+    |-- combined.csv
+    |-- DataFiles/
+    `-- DataPull.py
 ```
 
 ## Try it locally
