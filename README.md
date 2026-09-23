@@ -49,9 +49,7 @@ python scripts/validate_thesis_archive.py
 Expected output:
 
 ```text
-ok: model and calibration artifacts found
-ok: combined.csv parsed
-ok: streamlit entrypoint found
+validated 10 required files and combined.csv
 ```
 
 ## Live demo
